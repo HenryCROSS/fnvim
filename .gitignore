@@ -1,5 +1,8 @@
 # neovim
-lua/
+lua/plugins/*
+lua/config
+!lua/plugins.lua
+!lua/plugins/plugins.lua
 profile.json
 
 # cli
