@@ -2,7 +2,7 @@
 (local mason (autoload :mason))
 (local mason-lsp (autoload :mason-lspconfig))
 
-(local lsp (require :config/lsp))
+(local lsp (?. (require :config/lsp) :lsp))
 
 [{1 :williamboman/mason.nvim
   :config (fn []
