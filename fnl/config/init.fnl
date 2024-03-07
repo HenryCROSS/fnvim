@@ -67,4 +67,31 @@
   (each [option value (pairs options)]
     (core.assoc nvim.o option value)))
 
+;;; Disable builtin plugins
+(let [disabled_plugins
+      ["2html_plugin"
+       "getscript"
+       "getscriptPlugin"
+       "gzip"
+       "logipat"
+       "netrw"
+       "netrwPlugin"
+       "netrwSettings"
+       "netrwFileHandlers"
+       "matchit"
+       "matchparen"
+       "spec"
+       "tar"
+       "tarPlugin"
+       "rrhelper"
+       "spellfile_plugin"
+       "vimball"
+       "vimballPlugin"
+       "zip"
+       "zipPlugin"]]
+  (each [_ plugin (ipairs disabled_plugins)]
+    (tset vim.g (.. "loaded_" plugin) 1)))
+
+(require :config/keymapping)
+
 {}
